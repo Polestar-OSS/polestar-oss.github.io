@@ -1,5 +1,5 @@
 import { Container, Text, Group, ActionIcon, Divider, Stack, Anchor, Box } from '@mantine/core'
-import { IconBrandGithub, IconBrandTwitter, IconHeart } from '@tabler/icons-react'
+import { IconBrandGithub, IconHeart } from '@tabler/icons-react'
 
 export default function Footer() {
   return (

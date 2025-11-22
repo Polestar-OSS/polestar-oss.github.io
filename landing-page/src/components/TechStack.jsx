@@ -1,4 +1,4 @@
-import { Container, Title, Text, Stack, Box, SimpleGrid, Badge, Group, Card } from '@mantine/core'
+import { Container, Title, Text, Stack, Box, SimpleGrid, Badge, Card } from '@mantine/core'
 
 const techStack = [
   {
