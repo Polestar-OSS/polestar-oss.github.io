@@ -1,0 +1,96 @@
+{
+  "generatedFrom": "polestar-journey-log-explorer app/src/utils/sampleData.js (synthetic year around Gothenburg)",
+  "trips": 922,
+  "distanceKm": 9937,
+  "energyKwh": 1985,
+  "efficiency": 19.97,
+  "activeDays": 308,
+  "months": [
+    {
+      "label": "Sep 25",
+      "distance": 1036,
+      "efficiency": 18.4,
+      "trips": 68
+    },
+    {
+      "label": "Oct 25",
+      "distance": 597,
+      "efficiency": 21.2,
+      "trips": 93
+    },
+    {
+      "label": "Nov 25",
+      "distance": 585,
+      "efficiency": 22.8,
+      "trips": 65
+    },
+    {
+      "label": "Dec 25",
+      "distance": 649,
+      "efficiency": 26,
+      "trips": 89
+    },
+    {
+      "label": "Jan 26",
+      "distance": 489,
+      "efficiency": 26.5,
+      "trips": 68
+    },
+    {
+      "label": "Feb 26",
+      "distance": 630,
+      "efficiency": 25.1,
+      "trips": 78
+    },
+    {
+      "label": "Mar 26",
+      "distance": 392,
+      "efficiency": 22.4,
+      "trips": 70
+    },
+    {
+      "label": "Apr 26",
+      "distance": 546,
+      "efficiency": 19.7,
+      "trips": 78
+    },
+    {
+      "label": "May 26",
+      "distance": 602,
+      "efficiency": 18.1,
+      "trips": 86
+    },
+    {
+      "label": "Jun 26",
+      "distance": 1468,
+      "efficiency": 17.3,
+      "trips": 71
+    },
+    {
+      "label": "Jul 26",
+      "distance": 1433,
+      "efficiency": 17.1,
+      "trips": 78
+    },
+    {
+      "label": "Aug 26",
+      "distance": 1480,
+      "efficiency": 18.1,
+      "trips": 71
+    },
+    {
+      "label": "Sep 26",
+      "distance": 30,
+      "efficiency": 19.8,
+      "trips": 7
+    }
+  ],
+  "seasonality": {
+    "winter": 25.8,
+    "summer": 17.5,
+    "penaltyPct": 47
+  },
+  "usableKwh": 81.1,
+  "rangeKm": 406,
+  "homeSharePct": 35.5
+}

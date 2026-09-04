@@ -1,0 +1,186 @@
+/* Homepage-only styles; the design system itself is theme/global.css. */
+
+.site-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.site-hero-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keep the headline legible where routes cross behind it */
+.site-hero-field::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--ps-page) 72%, transparent) 0%, color-mix(in srgb, var(--ps-page) 35%, transparent) 45%, transparent 75%);
+}
+
+.site-hero-field svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Routes draw themselves in, staggered, then hold with a soft glow */
+.site-route {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: var(--ps-accent);
+  stroke-width: 2;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: site-draw 2.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--d, 0) * 1ms);
+}
+
+.site-route-glow {
+  filter: url(#site-glow);
+  stroke-width: 6;
+  opacity: 0.45;
+}
+
+.site-route-faint {
+  stroke: var(--ps-ink-2);
+  stroke-width: 1;
+  opacity: 0.35;
+}
+
+@keyframes site-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.site-car-dot {
+  fill: var(--ps-accent);
+}
+
+.site-car-halo {
+  fill: var(--ps-accent);
+  opacity: 0.25;
+  animation: ps-pulse-ring 1.8s ease-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Month bars: one column per month, growing from the baseline once in view */
+.site-bars {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 6px;
+  height: 220px;
+  align-items: end;
+  border-bottom: 1px solid var(--ps-axis);
+  padding-bottom: 22px;
+  position: relative;
+}
+
+.site-bar-col {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.site-bar {
+  background: linear-gradient(180deg, var(--ps-accent), color-mix(in srgb, var(--ps-accent) 55%, var(--ps-surface)));
+  border-radius: 2px 2px 0 0;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--i, 0) * 45ms);
+}
+
+.site-bars.is-in .site-bar {
+  transform: scaleY(1);
+}
+
+.site-bar-label {
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 10px !important;
+}
+
+@media (max-width: 480px) {
+  .site-bar-label:nth-child(odd) { visibility: hidden; }
+}
+
+.site-tilt {
+  transition: transform 300ms ease, box-shadow 300ms ease;
+  will-change: transform;
+}
+
+.site-tilt:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.6);
+}
+
+.site-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--ps-border);
+  border-radius: 2px;
+}
+
+/* Full-page captures are tall; show the top in a viewport-shaped frame and pan on hover */
+.site-shot-frame {
+  aspect-ratio: 16 / 9.5;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--ps-page);
+}
+
+.site-shot-frame .site-screenshot {
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: object-position 9s linear;
+}
+
+.site-shot-frame:hover .site-screenshot {
+  object-position: bottom;
+}
+
+.site-shot-frame-phone {
+  aspect-ratio: 9 / 16;
+}
+
+.site-marquee {
+  display: flex;
+  gap: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.site-marquee-track {
+  display: flex;
+  gap: 32px;
+  animation: site-marquee 36s linear infinite;
+}
+
+@keyframes site-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-route { animation: none; stroke-dashoffset: 0; }
+  .site-bar { transition: none; transform: none; }
+  .site-car-halo { animation: none; }
+  .site-marquee-track { animation: none; }
+  .site-tilt, .site-tilt:hover { transform: none; transition: none; }
+  .site-shot-frame .site-screenshot { transition: none; }
+  .site-shot-frame:hover .site-screenshot { object-position: top; }
+}

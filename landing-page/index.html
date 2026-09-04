@@ -1,46 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJCZC9JPK5"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Polestar OSS: community-built, open-source tools for Polestar owners that run entirely in your browser. Start with the Journey Log Explorer." />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4f4f2" media="(prefers-color-scheme: light)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://polestar-oss.github.io/" />
+    <meta property="og:title" content="Polestar OSS · Open-source tools for Polestar owners" />
+    <meta property="og:description" content="Community-built, privacy-first tools that run in your browser. Your data never leaves your device." />
+    <meta property="og:image" content="https://polestar-oss.github.io/screenshots/detailed.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Polestar OSS · Open-source tools for Polestar owners" />
+    <meta name="twitter:description" content="Community-built, privacy-first tools that run in your browser. Your data never leaves your device." />
+    <meta name="twitter:image" content="https://polestar-oss.github.io/screenshots/detailed.png" />
+    <title>Polestar OSS · Open-source tools for Polestar owners</title>
+
+    <!--
+      Google Analytics, gated by Consent Mode v2: denied until the visitor
+      accepts in the in-page banner; a stored acceptance is applied before
+      the tag configures itself.
+    -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+      try {
+        var stored = JSON.parse(localStorage.getItem('polestar-oss:consent') || 'null');
+        if (stored && stored.analytics === true) gtag('consent', 'update', { analytics_storage: 'granted' });
+      } catch (e) { /* storage unavailable: stays denied */ }
       gtag('js', new Date());
-      gtag('config', 'G-EJCZC9JPK5');
+      gtag('config', 'G-EJCZC9JPK5', { anonymize_ip: true });
     </script>
-    <!-- Iubenda Cookie Consent -->
-    <script type="text/javascript">
-      var _iub = _iub || [];
-      _iub.csConfiguration = {"siteId":4326386,"cookiePolicyId":84783740,"storage":{"useSiteId":true}};
-      _iub.csLangConfiguration = {"en":{"cookiePolicyId":84783740},"pt-BR":{"cookiePolicyId":54808376}};
-    </script>
-    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4326386.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
-    
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/white_transparent.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Polestar OSS - Community-driven open source tools for Polestar vehicles. Privacy-first applications that run locally in your browser." />
-    <meta name="keywords" content="Polestar, Polestar 2, Polestar 3, Journey Log, Analytics, Open Source, OSS, EV Tools" />
-    <meta name="author" content="Polestar OSS Community" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://polestar-oss.github.io/" />
-    <meta property="og:title" content="Polestar OSS - Open Source Tools for Polestar Vehicles" />
-    <meta property="og:description" content="Community-driven, privacy-first tools designed to enhance your Polestar ownership experience" />
-    <meta property="og:image" content="https://polestar-oss.github.io/dashboard.png" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://polestar-oss.github.io/" />
-    <meta property="twitter:title" content="Polestar OSS - Open Source Tools for Polestar Vehicles" />
-    <meta property="twitter:description" content="Community-driven, privacy-first tools designed to enhance your Polestar ownership experience" />
-    <meta property="twitter:image" content="https://polestar-oss.github.io/dashboard.png" />
-    
-    <title>Polestar OSS - Open Source Tools for Polestar Vehicles</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJCZC9JPK5"></script>
   </head>
   <body>
     <div id="root"></div>
