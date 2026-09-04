@@ -49,7 +49,7 @@ async function run(name, { width, height, scheme, mobile = false }) {
     await page.waitForTimeout(2500);
     await page.screenshot({ path: `${OUT}/${name}-full.png`, fullPage: true });
     if (!mobile) {
-        for (const tab of ['Detailed', 'Insights', 'Tariff']) {
+        for (const tab of ['Detailed', 'Insights', 'Tariff', 'Light']) {
             await page.locator('label', { hasText: new RegExp(`^${tab}$`) }).first().click();
             await page.waitForTimeout(400);
         }
